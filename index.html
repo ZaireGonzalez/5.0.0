@@ -10,97 +10,115 @@
             margin: 0;
             padding: 0;
             display: flex;
-            min-height: 100vh;
-            background-color: #f0f4f8;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
         }
-        #sidebar {
-            width: 250px;
-            background-color: #2e8b57;
-            color: white;
-            padding-top: 20px;
-            position: fixed;
-            height: 100%;
-            overflow-y: auto;
-        }
-        #sidebar a {
-            display: block;
-            padding: 15px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        #sidebar a:hover {
-            background-color: #3d9f70;
-        }
-        #main {
-            margin-left: 250px;
-            padding: 20px;
+
+        .container {
             width: 100%;
+            max-width: 1200px;
+            display: flex;
         }
+
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #444;
+            padding: 5px;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            display: none;
+        }
+
         .module {
             display: none;
         }
+
         .module.active {
             display: block;
         }
-        .module-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .module-table th, .module-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        .module-table th {
-            background-color: #2e8b57;
-            color: white;
-        }
-        h2 {
-            color: #2e8b57;
-        }
+
+        /* Estilos para el módulo de inicio de sesión */
         #login-screen {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f4f8;
+            background-color: #f4f4f4;
+            position: absolute;
+            width: 100%;
         }
-        #login-screen form {
-            background-color: white;
+
+        #login-form {
+            background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 300px;
+            text-align: center;
         }
-        #login-screen input {
+
+        #login-form input {
             width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
+            margin: 10px 0;
+            border: 1px solid #ccc;
             border-radius: 4px;
         }
-        #login-screen button {
-            width: 100%;
-            padding: 10px;
-            background-color: #2e8b57;
+
+        #login-form button {
+            padding: 10px 15px;
+            background-color: #333;
             color: white;
             border: none;
             border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #login-form button:hover {
+            background-color: #444;
         }
     </style>
 </head>
 <body>
-
     <!-- Pantalla de Login -->
     <div id="login-screen">
-        <form id="login-form">
-            <h2>Iniciar Sesión</h2>
-            <input type="text" id="username" placeholder="Usuario" required>
-            <input type="password" id="password" placeholder="Contraseña" required>
-            <button type="submit">Acceder</button>
-        </form>
+        <div id="login-form">
+            <h2>Inicio de Sesión</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
     </div>
 
     <!-- Pantalla Principal -->
